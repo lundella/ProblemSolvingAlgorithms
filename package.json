@@ -1,0 +1,15 @@
+{
+  "name": "ProblemSolvingAlgorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "0.1.max.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^25.2.4"
+  }
+}
