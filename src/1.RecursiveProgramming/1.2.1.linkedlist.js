@@ -20,9 +20,8 @@ class LinkedList {
       console.log(this.delete());
       return;
     } else if(no < 0) {
-      while(this.size) {
-        console.log(this.delete());
-      }
+      // this.print_list();
+      this.print_list2(this.start);
       return;
     }
     const Random = `0x${Math.random().toString(16).slice(2, 10)}`;
@@ -52,6 +51,27 @@ class LinkedList {
     return return_no;
   }
 
+  print_list() {
+    while (this.size) {
+      console.log(this.delete());
+    }
+  }
+
+  print_list2(node, callback) {
+    if(node === null) {
+      return;
+    }
+
+    let next_address = this.nodelist[node].next;
+    let delete_no = this.delete();
+    let stack_print = callback? callback: console.log;
+
+    this.print_list2(next_address, (print_no) => {
+      console.log(print_no);
+    });
+    stack_print(delete_no);
+  }
+
   data() {
     console.log(this.nodelist);
     return this.nodelist;
@@ -60,11 +80,9 @@ class LinkedList {
 
 let linkedList = new LinkedList();
 
-linkedList.insert(3);
-linkedList.insert(6);
-linkedList.insert(9);
-linkedList.insert(1);
-// linkedList.data();
-linkedList.insert(0);
-linkedList.insert(-1);
-// linkedList.data();
+// linkedList.insert(3);
+// linkedList.insert(6);
+// linkedList.insert(9);
+// linkedList.insert(1);
+// linkedList.insert(0);
+// linkedList.insert(-1);
