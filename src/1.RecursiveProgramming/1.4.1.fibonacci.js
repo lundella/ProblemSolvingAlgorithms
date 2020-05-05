@@ -12,4 +12,20 @@ function fibonacci (n) {
   return fibo(n);
 }
 
-console.log(fibonacci(50));
+function fibonacci3 (n) {
+  let first_element = 1;
+  let second_element = 1;
+  let temp;
+
+  if(n <= 2) { return 1; }
+
+  for(let index = 3; index <= n; index++) {
+    temp = first_element;
+    first_element = second_element + first_element;
+    second_element = temp;
+  }
+  return first_element;
+}
+
+// console.log(fibonacci(50));
+console.log(fibonacci3(50));
