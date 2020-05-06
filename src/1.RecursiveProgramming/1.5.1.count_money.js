@@ -42,5 +42,21 @@ function count_money_r(bills, money, toBill) {
   }
   return count;
 }
-console.log(count_money_r([1, 2, 5, 10, 20, 50], 100, 6));
+// console.log(count_money_r([1, 2, 5], 50, 3));
 // count_money();
+
+function testMemory() {
+  let dp = {};
+  let coin = [1, 3];
+  let money = 10
+  dp[0] = 1; 
+  
+  for (let i = 0; i < 2; i++) { 
+    for (let j = coin[i]; j <= money; j++) { 
+      console.log(j, j - coin[i]);
+      dp[j] = dp[j] + dp[j - coin[i]]; 
+    }
+  }
+  console.log(dp);
+}
+testMemory();
